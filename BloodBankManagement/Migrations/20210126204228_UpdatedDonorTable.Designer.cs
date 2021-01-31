@@ -3,14 +3,16 @@ using System;
 using BloodBankManagement.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BloodBankManagement.Migrations
 {
     [DbContext(typeof(BloodBankDbContext))]
-    partial class BloodBankDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210126204228_UpdatedDonorTable")]
+    partial class UpdatedDonorTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

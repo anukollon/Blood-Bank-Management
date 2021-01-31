@@ -7,8 +7,8 @@ namespace BloodBankManagement.Models
 {
     public class Donor
     {
-        public string Name { get; set; }
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Gender { get; set; }
 
         public string Email { get; set; }
@@ -25,11 +25,11 @@ namespace BloodBankManagement.Models
         {
         }
 
-        public Donor(string name, string gender,DateTime dateOfBirth, string email, 
+        public Donor(string firstName, string lastName, DateTime dateOfBirth, string email, 
             Address address, string contactNum, string bloodgroup) : this()
         {
-            Name = name;
-            Gender = gender;
+            FirstName = firstName;
+            LastName = lastName;
             DateOfBirth = dateOfBirth;
             Email = email;
             Address = address;
@@ -41,7 +41,7 @@ namespace BloodBankManagement.Models
 
         public override string ToString()
         {
-            return Name;
+            return FirstName+LastName;
         }
 
         public override bool Equals(object obj)
@@ -55,10 +55,5 @@ namespace BloodBankManagement.Models
             return HashCode.Combine(Id);
         }
     }
-    //ToDo: check this
-    public enum Gender
-    {
-        Male,
-        Female
-    }
+   
 }

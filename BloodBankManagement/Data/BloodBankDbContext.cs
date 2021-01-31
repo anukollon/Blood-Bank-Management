@@ -1,4 +1,6 @@
 ﻿using BloodBankManagement.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagement.Data
 {
-    public class BloodBankDbContext : DbContext
+    public class BloodBankDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<Donor> Donors { get; set; }
+        public DbSet<Address> Address { get; set; }
         public BloodBankDbContext(DbContextOptions<BloodBankDbContext> options) : base(options)
         {
 

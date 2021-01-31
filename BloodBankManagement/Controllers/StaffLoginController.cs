@@ -6,6 +6,7 @@ using BloodBankManagement.Data;
 using BloodBankManagement.Models;
 using BloodBankManagement.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BloodBankManagement.Controllers
 {
@@ -38,8 +39,8 @@ namespace BloodBankManagement.Controllers
 
                 Donor newDonor = new Donor
                 {
-                    Name = addDonorViewModel.Name,
-                    Gender = addDonorViewModel.Gender,
+                    FirstName = addDonorViewModel.FirstName,
+                    LastName = addDonorViewModel.LastName,
                     DateOfBirth = addDonorViewModel.DateOfBirth,
                     Email = addDonorViewModel.Email,
                     Address = address,
@@ -50,11 +51,33 @@ namespace BloodBankManagement.Controllers
                 // EventData.Add(newEvent);
                 context.Donors.Add(newDonor);
                 context.SaveChanges();
-
+                TempData["DonorAdded"] = "true";
                 return Redirect("/StaffLogin");
             }
 
             return View(addDonorViewModel);
+        }
+
+        public IActionResult DeleteDonor()
+        {
+            ViewBag.donors = context.Donors.Include(d => d.Address).ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteDonor(int[] donorIds)
+        {
+            foreach (int donorId in donorIds)
+            {
+                Donor theDonor = context.Donors.Find(donorId);
+                Address donorAddress = context.Address.Find(theDonor.AddressId);
+                context.Address.Remove(donorAddress);
+                context.Donors.Remove(theDonor);
+            }
+            context.SaveChanges();
+            TempData["DonorCount"] = donorIds.Count();
+            TempData["DonorDeleted"] = "true";
+            return Redirect("/StaffLogin");
         }
     }
 }
