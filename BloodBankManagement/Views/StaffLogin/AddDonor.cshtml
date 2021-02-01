@@ -1,6 +1,6 @@
 ﻿@model BloodBankManagement.ViewModel.AddDonorViewModel;
 
-<h1>Add Donor</h1>
+<h3>Add Donor</h3>
 <form asp-controller="StaffLogin" asp-action="AddDonor" method="post">
     <div class="form-group">
         <label asp-for="FirstName">First Name</label>
@@ -52,8 +52,9 @@
     </div>
     <div class="form-group">
         <label asp-for="BloodGroup">Blood Group</label>
-        <input asp-for="BloodGroup" />
-        <span asp-validation-for="BloodGroup"></span>
+        @*        <input asp-for="BloodGroup"  />
+        <span asp-validation-for="BloodGroup"></span>*@
+        <select asp-for="BloodGroup" asp-items="Model.BloodGroups"></select>
     </div>
     <input type="submit" value="Add Donor" />
 </form>

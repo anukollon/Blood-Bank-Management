@@ -1,4 +1,5 @@
 ﻿using BloodBankManagement.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,19 @@ namespace BloodBankManagement.ViewModel
         [Required(ErrorMessage = "Contact Phone Number is required.")]
         public string ContactNum { get; set; }
         public string BloodGroup { get; set; }
+
+        [Required(ErrorMessage = "Please select a Blood Group.")]
+        public List<SelectListItem> BloodGroups { get; set; } = new List<SelectListItem>
+        {
+             new SelectListItem() {Text="A+", Value="A+"},
+             new SelectListItem() {Text="A- ", Value="A-"},
+             new SelectListItem() {Text="B+", Value="B+"},
+             new SelectListItem() {Text="B-", Value="B-"},
+             new SelectListItem() {Text="AB+", Value="AB+"},
+             new SelectListItem() {Text="AB-", Value="AB-"},
+             new SelectListItem() {Text="O+", Value="O+"},
+             new SelectListItem() {Text="O-", Value="O-"}
+        };
         public AddDonorViewModel()
         {
 

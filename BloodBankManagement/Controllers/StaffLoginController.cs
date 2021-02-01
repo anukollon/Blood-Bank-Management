@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BloodBankManagement.Data;
 using BloodBankManagement.Models;
 using BloodBankManagement.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,7 @@ namespace BloodBankManagement.Controllers
         {
             context = dbContext;
         }
+        [Authorize]
         public IActionResult Index()
         {
             return View();

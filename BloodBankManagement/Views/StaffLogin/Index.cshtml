@@ -1,15 +1,17 @@
 ﻿@*@model List<BloodBankManagement.Models.HomeController>*@
 
-<h1>Blood Bank Management Software</h1>
-@if (TempData["DonorAdded"] != null && TempData["DonorAdded"].ToString() == "true")
-{
-    <h4>Donor Successfully Added</h4>
-}
+<h3>Blood Bank Management Software</h3>
+<p>
+    @if (TempData["DonorAdded"] != null && TempData["DonorAdded"].ToString() == "true")
+    {
+        <h4>Donor Successfully Added</h4>
+    }
 
-@if (TempData["DonorDeleted"] != null && TempData["DonorDeleted"].ToString() == "true")
-{
-    <h4>@TempData["DonorCount"].ToString() Donor Deleted Successfully</h4>
-}
+    @if (TempData["DonorDeleted"] != null && TempData["DonorDeleted"].ToString() == "true")
+    {
+        <h4>@TempData["DonorCount"].ToString() Donor Deleted Successfully</h4>
+    }
+</p>
 <p>
     <a asp-controller="StaffLogin" asp-action="AddDonor">Add Donor</a>
 </p>

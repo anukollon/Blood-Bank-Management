@@ -4,7 +4,7 @@
 @{
 }
 
-<h1>Delete Donor</h1>
+<h3>Delete Donor</h3>
 @if (ViewBag.donors.Count == 0)
 {
     <p>No Donor data available!</p>
@@ -12,12 +12,13 @@
 else
 {
     <form method="post">
-        <table class="job-listing">
+        <table class="donor-listing">
             <tr>
                 <th>Donor ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Location</th>
+                <th>Blood Group</th>
                 <th>Select the Donor</th>
             </tr>
 
@@ -28,10 +29,13 @@ else
                     <td>@donor.FirstName</td>
                     <td>@donor.LastName</td>
                     <td>@donor.Address.City, @donor.Address.State</td>
+                    <td>@donor.BloodGroup</td>
                     <td><input type="checkbox" name="donorIds" value="@donor.Id" class="form-control"></td>
                 </tr>
             }
         </table>
-        <input type="submit" value="Delete Selected Donors" class="btn btn-danger">
+        <p>
+            <input type="submit" value="Delete Selected Donors" class="btn btn-danger">
+        </p>
     </form>
 }
