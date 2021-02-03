@@ -84,19 +84,19 @@ table.donor-listing td, table.donor-listing th {
     border: 1px solid #ddd;
     padding: 8px;
 }
-#donor-listing tr:nth-child(even) {
-    background-color: gray;
+table.donor-listing tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-#donor-listing tr:hover {
-    background-color: white;
+table.donor-listing tr:hover {
+    background-color: #ddd;
 }
 
-#donor-listing th {
+table.donor-listing th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: greenyellow;
+    background-color: #4CAF50;
     color: white;
 }
 

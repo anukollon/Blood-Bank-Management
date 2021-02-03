@@ -15,7 +15,7 @@ namespace BloodBankManagement.ViewModel
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "First Name is required.")]
+        [Required(ErrorMessage = "Last Name is required.")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
         public string LastName { get; set; }
 
@@ -38,6 +38,7 @@ namespace BloodBankManagement.ViewModel
         public string Zip { get; set; }
 
         [Required(ErrorMessage = "Contact Phone Number is required.")]
+        [StringLength(10,ErrorMessage ="Invalid Contact Number")]
         public string ContactNum { get; set; }
         public string BloodGroup { get; set; }
 

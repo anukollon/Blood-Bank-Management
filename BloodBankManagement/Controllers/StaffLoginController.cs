@@ -81,5 +81,12 @@ namespace BloodBankManagement.Controllers
             TempData["DonorDeleted"] = "true";
             return Redirect("/StaffLogin");
         }
+
+        public IActionResult List()
+        {
+            ViewBag.donors = context.Donors.Include(d => d.Address).ToList();
+            return View();
+        }
+
     }
 }

@@ -60,8 +60,14 @@ namespace BloodBankManagement.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-        }
 
+            [DataType(DataType.Password)]
+            [Display(Name = "Staff Registration Code")]
+            [Compare("StaffCode", ErrorMessage ="Staff Registration Code do not match.")]
+            public string StaffLoginCode { get; set; }
+            public String StaffCode { get; } = "LC";
+        }
+         
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
