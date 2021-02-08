@@ -11,9 +11,7 @@ namespace BloodBankManagement.ViewModel
 {
     public class AddDonorViewModel
     {
-        private Donor editDonor;
-
-        public int Id { get; set; }
+       public int Id { get; set; }
         [Required(ErrorMessage = "First Name is required.")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
         public string FirstName { get; set; }
@@ -26,7 +24,7 @@ namespace BloodBankManagement.ViewModel
         [DisplayName("Date of Birth")]
         [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [MinimumAge(16)]
-        public DateTime DateOfBirth { get; set; }
+        public String DateOfBirth { get; set; }
 
         [Required(ErrorMessage ="E-mail is required.")]
         [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]

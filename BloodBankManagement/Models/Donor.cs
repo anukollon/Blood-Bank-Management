@@ -12,7 +12,7 @@ namespace BloodBankManagement.Models
         public string Gender { get; set; }
 
         public string Email { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
 
         public string ContactNum { get; set; }
         public Address Address { get; set; }
@@ -25,7 +25,7 @@ namespace BloodBankManagement.Models
         {
         }
 
-        public Donor(string firstName, string lastName, DateTime dateOfBirth, string email, 
+        public Donor(string firstName, string lastName, string dateOfBirth, string email, 
             Address address, string contactNum, string bloodgroup) : this()
         {
             FirstName = firstName;
@@ -36,9 +36,6 @@ namespace BloodBankManagement.Models
             ContactNum = contactNum;
             BloodGroup = bloodgroup;
         }
-           
-
-
         public override string ToString()
         {
             return FirstName+LastName;
