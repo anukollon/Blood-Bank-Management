@@ -53,7 +53,7 @@ namespace BloodBankManagement.Controllers
                 // EventData.Add(newEvent);
                 context.Donors.Add(newDonor);
                 context.SaveChanges();
-                TempData["DonorAdded"] = "true";
+                TempData["msg"] = "New Donor Added Successfully.";
                 return Redirect("/StaffLogin");
             }
 
@@ -77,16 +77,8 @@ namespace BloodBankManagement.Controllers
                 context.Donors.Remove(theDonor);
             }
             context.SaveChanges();
-            TempData["DonorCount"] = donorIds.Count();
-            TempData["DonorDeleted"] = "true";
+            TempData["msg"] = donorIds.Count()+ " Donor Deleted Successfully.";
             return Redirect("/StaffLogin");
         }
-
-        public IActionResult List()
-        {
-            ViewBag.donors = context.Donors.Include(d => d.Address).ToList();
-            return View();
-        }
-
     }
 }

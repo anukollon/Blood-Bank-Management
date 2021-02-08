@@ -22,14 +22,14 @@ else
             </tr>
 
             @foreach (var donor in ViewBag.donors)
-            {
-                <tr>
-                    <td>@donor.Id</td>
-                    <td>@donor.FirstName</td>
-                    <td>@donor.LastName</td>
-                    <td>@donor.Address.City, @donor.Address.State</td>
-                    <td>@donor.BloodGroup</td>
-                </tr>
+            {  
+            <tr>
+                <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">@donor.Id</a></td>
+                <td>@donor.FirstName</td>
+                <td>@donor.LastName</td>
+                <td>@donor.Address.City, @donor.Address.State</td>
+                <td>@donor.BloodGroup</td>
+            </tr>
             }
         </table>
     </form>

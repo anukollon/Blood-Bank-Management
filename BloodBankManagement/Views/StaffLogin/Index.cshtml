@@ -2,14 +2,9 @@
 
 <h3>Blood Bank Management Software</h3>
 <p>
-    @if (TempData["DonorAdded"] != null && TempData["DonorAdded"].ToString() == "true")
+    @if (TempData["msg"] != null)
     {
-        <h4>Donor Successfully Added</h4>
-    }
-
-    @if (TempData["DonorDeleted"] != null && TempData["DonorDeleted"].ToString() == "true")
-    {
-        <h4>@TempData["DonorCount"].ToString() Donor Deleted Successfully</h4>
+    <h4>@TempData["msg"].ToString()</h4>
     }
 </p>
 <p>
@@ -25,7 +20,7 @@
 </p>
 
 <p>
-    <a asp-controller="StaffLogin" asp-action="List">List Donors</a>
+    <a asp-controller="ListDonor">List Donors</a>
 </p>
 
 <p>

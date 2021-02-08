@@ -100,3 +100,7 @@ table.donor-listing th {
     color: white;
 }
 
+.ButtonClass {
+    cursor: pointer;
+}
+

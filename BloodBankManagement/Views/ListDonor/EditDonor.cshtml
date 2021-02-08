@@ -1,54 +1,57 @@
 ﻿@model BloodBankManagement.ViewModel.AddDonorViewModel;
-
-<h3>Add Donor</h3>
-<form asp-controller="StaffLogin" asp-action="AddDonor" method="post">
+<h1>Edit Donor</h1>
+<form asp-controller="ListDonor" asp-action="EditDonor" method="post">
+    <div class="form-group">
+        <input asp-for="Id" type="hidden" value="@Model.Id" />
+    </div>
     <div class="form-group">
         <label asp-for="FirstName">First Name</label>
-        <input asp-for="FirstName" />
+        <input asp-for="FirstName" value="@Model.FirstName"/>
         <span asp-validation-for="FirstName"></span>
-
+        </div>
+    <div>
         <label asp-for="LastName">Last Name</label>
-        <input asp-for="LastName" />
+        <input asp-for="LastName" value="@Model.LastName"/>
         <span asp-validation-for="LastName"></span>
     </div>
     <div class="form-group">
         <label asp-for="DateOfBirth"></label>
-        <input asp-for="DateOfBirth" />
+        <input asp-for="DateOfBirth" value="@Model.DateOfBirth"/>
         <span asp-validation-for="DateOfBirth"></span>
     </div>
     <div class="form-group">
         <label asp-for="Line1">Address Line 1</label>
-        <input asp-for="Line1" />
+        <input asp-for="Line1" value="@Model.Line1"/>
         <span asp-validation-for="Line1"></span>
     </div>
     <div class="form-group">
         <label asp-for="Line2">Address Line 2</label>
-        <input asp-for="Line2"/>
+        <input asp-for="Line2" value="@Model.Line2"/>
         <span asp-validation-for="Line2"></span>
     </div>
     <div class="form-group">
         <label asp-for="City"></label>
-        <input asp-for="City"/>
+        <input asp-for="City" value="@Model.City"/>
         <span asp-validation-for="City"></span>
     </div>
     <div class="form-group">
         <label asp-for="State"></label>
-        <input asp-for="State"/>
+        <input asp-for="State" value="@Model.State"/>
         <span asp-validation-for="State"></span>
     </div>
     <div class="form-group">
         <label asp-for="Zip"></label>
-        <input asp-for="Zip"/>
+        <input asp-for="Zip" value="@Model.Zip"/>
         <span asp-validation-for="Zip"></span>
     </div>
     <div class="form-group">
         <label asp-for="Email">Contact Email</label>
-        <input asp-for="Email" />
+        <input asp-for="Email" value="@Model.Email"/>
         <span asp-validation-for="Email"></span>
     </div>
     <div class="form-group">
         <label asp-for="ContactNum">Contact Number</label>
-        <input asp-for="ContactNum" />
+        <input asp-for="ContactNum" value="@Model.ContactNum" />
         <span asp-validation-for="ContactNum"></span>
     </div>
     <div class="form-group">
@@ -56,5 +59,6 @@
         <select asp-for="BloodGroup" asp-items="Model.BloodGroups"></select>
         <span asp-validation-for="BloodGroup"></span>
     </div>
-    <input type="submit" value="Add Donor" />
+    <input type="submit" value="Edit Donor" />
 </form>
+

@@ -11,6 +11,9 @@ namespace BloodBankManagement.ViewModel
 {
     public class AddDonorViewModel
     {
+        private Donor editDonor;
+
+        public int Id { get; set; }
         [Required(ErrorMessage = "First Name is required.")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
         public string FirstName { get; set; }
@@ -30,15 +33,18 @@ namespace BloodBankManagement.ViewModel
         public string Email { get; set; }
         public int AddressId { get; set; }
         //public Address Address { get; set; }
+        [Required(ErrorMessage = "Adress is required.")]
         public string Line1 { get; set; }
         public string Line2 { get; set; }
-
+        [Required(ErrorMessage = "City is required.")]
         public string City { get; set; }
+        [Required(ErrorMessage = "State is required.")]
         public string State { get; set; }
+        [Required(ErrorMessage = "Zip is required.")]
         public string Zip { get; set; }
 
         [Required(ErrorMessage = "Contact Phone Number is required.")]
-        [StringLength(10,ErrorMessage ="Invalid Contact Number")]
+        [MinLength(10,ErrorMessage ="Invalid Contact Number")]
         public string ContactNum { get; set; }
         public string BloodGroup { get; set; }
 
@@ -57,6 +63,25 @@ namespace BloodBankManagement.ViewModel
         public AddDonorViewModel()
         {
 
+        }
+
+        public AddDonorViewModel(Donor editDonor)
+        {
+            FirstName = editDonor.FirstName;
+            LastName = editDonor.LastName;
+            DateOfBirth = editDonor.DateOfBirth;
+            Email = editDonor.Email;
+            AddressId = editDonor.AddressId;
+            Line1 = editDonor.Address.Line1;
+            Line2 = editDonor.Address.Line2;
+            City = editDonor.Address.City;
+            State = editDonor.Address.State;
+            Zip = editDonor.Address.Zip;
+            ContactNum = editDonor.ContactNum;
+            BloodGroup = editDonor.BloodGroup;
+            Id = editDonor.Id;
+
+            Console.WriteLine(DateOfBirth);
         }
     }
 }
