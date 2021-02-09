@@ -177,3 +177,4 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\Razor\Views\ListDonor\EditDonor.cshtml.g.cs
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\Razor\Views\ListDonor\Index.cshtml.g.cs
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Search\Index.cshtml.g.cs

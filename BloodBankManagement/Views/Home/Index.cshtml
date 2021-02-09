@@ -7,3 +7,16 @@
     <h1 class="display-4">Blood Bank Management System</h1>
     <p>A one stop website to manage donors and stocks in a Blood Bank.</p>
 </div>
+<hr />
+<p class="alert-heading">
+    @if (TempData["msg"] != null)
+    {
+        <h4>@TempData["msg"].ToString()</h4>
+    }
+</p>
+
+<hr />
+<div class="text-center">
+    <h2><a asp-controller="StaffLogin" asp-action="AddDonor">Click Here to Donate Blood</a></h2>
+ </div>
+<hr />

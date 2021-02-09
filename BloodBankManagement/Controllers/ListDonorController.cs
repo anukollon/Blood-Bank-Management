@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using BloodBankManagement.Data;
 using BloodBankManagement.Models;
 using BloodBankManagement.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BloodBankManagement.Controllers
 {
+    [Authorize]
     public class ListDonorController : Controller
     {
         private BloodBankDbContext context;
@@ -25,10 +27,8 @@ namespace BloodBankManagement.Controllers
         }
         public IActionResult EditDonor(string value)
         {
-            Console.WriteLine("value: " + value);
             Donor editDonor = context.Donors.Find(int.Parse(value));
             Address donorAddress = context.Address.Find(editDonor.AddressId);
-            Console.WriteLine("editDonor in get: " + editDonor.DateOfBirth);
             editDonor.Address = donorAddress;
             AddDonorViewModel donorViewModel = new AddDonorViewModel(editDonor);
             return View(donorViewModel);
@@ -40,9 +40,7 @@ namespace BloodBankManagement.Controllers
             {
                 
                 Donor donorToEdit = context.Donors.Find(donorViewModel.Id);
-                Console.WriteLine("inside model state is valid donorToEdit.AddressId:" + donorToEdit.AddressId);
                 Address addressToEdit = context.Address.Find(donorToEdit.AddressId);
-                Console.WriteLine("editDonor in post: " + donorToEdit.DateOfBirth);
 
                 donorToEdit.FirstName = donorViewModel.FirstName;
                 donorToEdit.LastName = donorViewModel.LastName;

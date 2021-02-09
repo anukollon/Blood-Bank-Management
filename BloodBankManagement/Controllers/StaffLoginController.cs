@@ -54,12 +54,23 @@ namespace BloodBankManagement.Controllers
                 context.Donors.Add(newDonor);
                 context.SaveChanges();
                 TempData["msg"] = "New Donor Added Successfully.";
-                return Redirect("/StaffLogin");
+                if (User.Identity.IsAuthenticated)
+                {
+                    return Redirect("/StaffLogin");
+                }
+                else
+                {
+                    TempData["msg"] = "Thanks for volunteering! Your Details are updated in the Blood Bank Database. " +
+                        "The nearest center staff will call you to schedule a date for blood donation.";
+                    return Redirect("/Home");
+                }
+                    
             }
 
             return View(addDonorViewModel);
         }
 
+        [Authorize]
         public IActionResult DeleteDonor()
         {
             ViewBag.donors = context.Donors.Include(d => d.Address).ToList();
@@ -67,6 +78,7 @@ namespace BloodBankManagement.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult DeleteDonor(int[] donorIds)
         {
             foreach (int donorId in donorIds)

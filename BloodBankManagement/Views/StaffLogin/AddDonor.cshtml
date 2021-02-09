@@ -1,6 +1,13 @@
 ﻿@model BloodBankManagement.ViewModel.AddDonorViewModel;
-
-<h3>Add Donor</h3>
+@if (User.Identity.IsAuthenticated)
+{
+    <h3>Add Donor</h3>  
+}
+else
+{
+    <h3>Please update the following details to donate blood:</h3>
+}
+<hr />
 <form asp-controller="StaffLogin" asp-action="AddDonor" method="post">
     <div class="form-group">
         <label asp-for="FirstName">First Name</label>
@@ -23,22 +30,22 @@
     </div>
     <div class="form-group">
         <label asp-for="Line2">Address Line 2</label>
-        <input asp-for="Line2"/>
+        <input asp-for="Line2" />
         <span asp-validation-for="Line2"></span>
     </div>
     <div class="form-group">
         <label asp-for="City"></label>
-        <input asp-for="City"/>
+        <input asp-for="City" />
         <span asp-validation-for="City"></span>
     </div>
     <div class="form-group">
         <label asp-for="State"></label>
-        <input asp-for="State"/>
+        <input asp-for="State" />
         <span asp-validation-for="State"></span>
     </div>
     <div class="form-group">
         <label asp-for="Zip"></label>
-        <input asp-for="Zip"/>
+        <input asp-for="Zip" />
         <span asp-validation-for="Zip"></span>
     </div>
     <div class="form-group">
@@ -56,5 +63,6 @@
         <select asp-for="BloodGroup" asp-items="Model.BloodGroups"></select>
         <span asp-validation-for="BloodGroup"></span>
     </div>
-    <input type="submit" value="Add Donor" />
+    <hr />
+    <input type="submit" value="Update" />
 </form>

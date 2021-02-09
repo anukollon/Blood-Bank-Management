@@ -1,6 +1,7 @@
 ﻿@*@model List<BloodBankManagement.Models.HomeController>*@
 
 <h3>Blood Bank Management Software</h3>
+<hr />
 <p>
     @if (TempData["msg"] != null)
     {
@@ -16,11 +17,11 @@
 </p>
 
 <p>
-    <a asp-controller="StaffLogin" asp-action="Search">Search Donor</a>
+    <a asp-controller="Search">Search Donor</a>
 </p>
 
 <p>
-    <a asp-controller="ListDonor">List Donors</a>
+    <a asp-controller="ListDonor">Donor List</a>
 </p>
 
 <p>

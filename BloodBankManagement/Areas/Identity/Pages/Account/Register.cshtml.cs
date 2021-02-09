@@ -65,7 +65,7 @@ namespace BloodBankManagement.Areas.Identity.Pages.Account
             [Display(Name = "Staff Registration Code")]
             [Compare("StaffCode", ErrorMessage ="Staff Registration Code do not match.")]
             public string StaffLoginCode { get; set; }
-            public String StaffCode { get; } = "LC";
+            public String StaffCode { get; } = "LC101";
         }
          
         public async Task OnGetAsync(string returnUrl = null)

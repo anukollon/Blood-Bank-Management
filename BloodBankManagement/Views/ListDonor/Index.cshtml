@@ -4,7 +4,7 @@
 @{
 }
 
-<h3>List Donors</h3>
+<h3>Edit Donors</h3>
 @if (ViewBag.donors.Count == 0)
 {
     <p>No Donor data available!</p>
@@ -18,17 +18,23 @@ else
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Location</th>
+                <th>Email</th>
+                <th>Contact Number</th>
                 <th>Blood Group</th>
+                <th></th>
             </tr>
 
             @foreach (var donor in ViewBag.donors)
             {  
             <tr>
-                <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">@donor.Id</a></td>
+                <td>@donor.Id</td>
                 <td>@donor.FirstName</td>
                 <td>@donor.LastName</td>
                 <td>@donor.Address.City, @donor.Address.State</td>
+                <td>@donor.Email</td>
+                <td>@donor.ContactNum</td>
                 <td>@donor.BloodGroup</td>
+                <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">Edit</a></td>
             </tr>
             }
         </table>
