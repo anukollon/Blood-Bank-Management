@@ -178,3 +178,5 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.pdb
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.genruntimeconfig.cache
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\Razor\Views\ManageStock\Index.cshtml.g.cs
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\Razor\Views\ManageStock\EditStock.cshtml.g.cs

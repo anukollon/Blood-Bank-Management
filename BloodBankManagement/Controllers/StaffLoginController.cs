@@ -89,7 +89,7 @@ namespace BloodBankManagement.Controllers
                 context.Donors.Remove(theDonor);
             }
             context.SaveChanges();
-            TempData["msg"] = donorIds.Count()+ " Donor Deleted Successfully.";
+            TempData["msg"] = donorIds.Count()+ " Donor Deleted.";
             return Redirect("/StaffLogin");
         }
     }

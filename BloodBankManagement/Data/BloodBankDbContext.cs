@@ -13,6 +13,7 @@ namespace BloodBankManagement.Data
     {
         public DbSet<Donor> Donors { get; set; }
         public DbSet<Address> Address { get; set; }
+        public DbSet<BloodStock> BloodStock { get; set; }
         public BloodBankDbContext(DbContextOptions<BloodBankDbContext> options) : base(options)
         {
 

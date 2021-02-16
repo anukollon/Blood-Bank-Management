@@ -1,0 +1,75 @@
+﻿@model BloodBankManagement.ViewModel.ManageStockViewModel;
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-body">
+
+                    <form asp-controller="ManageStock" asp-action="EditStock" method="post">
+                        <div class="form-group">
+                            <input asp-for="Id" type="hidden" value="@Model.Id" />
+                            <input asp-for="BloodGroup" type="hidden" value="@Model.BloodGroup" />
+                            <input asp-for="Quantity" type="hidden" value="@Model.Quantity" />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group h3">
+                                    <h4>Edit Stock for Blood Group: @Model.BloodGroup</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <hr />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Current Quantity: @Model.Quantity units
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span>
+                                        <input type="radio" name="radioButton" id="Increase" value="Increase"
+                                               checked="checked" />
+                                        <label for="Increase">Increase by:</label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span>
+                                        <input type="radio" name="radioButton" id="Decrease" value="Decrease" />
+                                        <label for="Decrease">Decrease by:</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span>
+                                        <label for="AmountToUpdate" class="font-weight-bold">Enter the amount:</label>
+                                        <input type="text" name="AmountToUpdate" id="amountToUpdate" placeholder="Unit of Blood" />
+                                        <span asp-validation-for="AmountToUpdate"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Update" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
