@@ -3,40 +3,61 @@
 *@
 @{
 }
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Donor List</h4>
+                        </div>
+                    </div>
+                    @if (ViewBag.donors.Count == 0)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>No Donor data available!</h4>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                <form method="post">
+                    <div class="row">
+                        <div class="col-md-12 align-content-center">
+                            <table class="donor-listing">
+                                <tr>
+                                    <th>Donor ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Location</th>
+                                    <th>Email</th>
+                                    <th>Contact Number</th>
+                                    <th>Blood Group</th>
+                                    <th></th>
+                                </tr>
 
-<h3>Edit Donors</h3>
-@if (ViewBag.donors.Count == 0)
-{
-    <p>No Donor data available!</p>
-}
-else
-{
-    <form method="post">
-        <table class="donor-listing">
-            <tr>
-                <th>Donor ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Location</th>
-                <th>Email</th>
-                <th>Contact Number</th>
-                <th>Blood Group</th>
-                <th></th>
-            </tr>
-
-            @foreach (var donor in ViewBag.donors)
-            {  
-            <tr>
-                <td>@donor.Id</td>
-                <td>@donor.FirstName</td>
-                <td>@donor.LastName</td>
-                <td>@donor.Address.City, @donor.Address.State</td>
-                <td>@donor.Email</td>
-                <td>@donor.ContactNum</td>
-                <td>@donor.BloodGroup</td>
-                <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">Edit</a></td>
-            </tr>
-            }
-        </table>
-    </form>
-}
+                                @foreach (var donor in ViewBag.donors)
+                                {
+                                    <tr>
+                                        <td>@donor.Id</td>
+                                        <td>@donor.FirstName</td>
+                                        <td>@donor.LastName</td>
+                                        <td>@donor.Address.City, @donor.Address.State</td>
+                                        <td>@donor.Email</td>
+                                        <td>@donor.ContactNum</td>
+                                        <td>@donor.BloodGroup</td>
+                                        <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">Edit</a></td>
+                                    </tr>
+                                }
+                            </table>
+                            </div>
+                        </div>
+                </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

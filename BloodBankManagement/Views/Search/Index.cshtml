@@ -1,57 +1,105 @@
-﻿<div class="container body-content">
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-body">
 
-    <form action="/search/results" method="post">
-        <h2>Search by: </h2>
+                    <form action="/search/results" method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <h4>Search by:</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group h3">
+                                    <span>
+                                        <input type="radio" name="searchType" id="BloodGroup" value="BloodGroup" 
+                                               @if (ViewBag.checkedValue == "BloodGroup") { <text> checked="checked" </text> } />
+                                        <label for="BloodGroup">Blood Group</label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group h3">
+                                    <span>
+                                        <input type="radio" name="searchType" id="Location" value="Location"
+                                               @if (ViewBag.checkedValue == "Location") { <text> checked="checked" </text> } />
+                                        <label for="Location">Location</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span>
+                                        <label for="searchTerm" class="font-weight-bold">Keyword:</label>
+                                        <input type="text" name="searchTerm" id="searchTerm" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Search" class="btn btn-primary"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
 
-        <p>
-            <span>
-                <input type="radio" name="searchType" id="BloodGroup" value="BloodGroup"
-                       @if (ViewBag.checkedValue == "BloodGroup") { <text> checked="checked" </text> } />
-                <label for="BloodGroup">Blood Group</label>
-            </span>
-            <span>
-                <input type="radio" name="searchType" id="Location" value="Location"
-                       @if (ViewBag.checkedValue == "Location") { <text> checked="checked" </text> } />
-                <label for="Location">Location</label>
-            </span>
+                    @if (ViewBag.donors != null && ViewBag.donors.Count != 0)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                <hr />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 align-content-center">
+                                <table class="donor-listing">
+                                    <tr>
+                                        <th>Donor ID</th>
+                                        <th>Name</th>
+                                        <th>Location</th>
+                                        <th>Email</th>
+                                        <th>Contact Number</th>
+                                        <th>Blood Group</th>
+                                    </tr>
+                                    @foreach (var donor in ViewBag.donors)
+                                    {
+                                        <tr>
+                                            <td>@donor.Id</td>
+                                            <td>@donor.FirstName, @donor.LastName</td>
+                                            <td>@donor.Location</td>
+                                            <td>@donor.Email</td>
+                                            <td>@donor.ContactNum</td>
+                                            <td>@donor.BloodGroup</td>
+                                        </tr>
+                                    }
 
-        </p>
+                                </table>
+                            </div>
+                        </div>
+                    }
+                    else if (ViewBag.donors != null && ViewBag.donors.Count == 0)
+                    { <div class="row">
+                            <div class="col-md-12">
+                                <hr />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>No results found.</h2>
+                            </div>
+                        </div>
 
-        <p>
-            <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
-        </p>
-        <input type="submit" value="Search" />
-        <hr />
-    </form>
-
-    @if (ViewBag.donors != null && ViewBag.donors.Count !=0)
-    {
-    <table class="donor-listing">
-            <tr>
-                <th>Donor ID</th>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Email</th>
-                <th>Contact Number</th>
-                <th>Blood Group</th>
-            </tr>
-            @foreach (var donor in ViewBag.donors)
-            {
-                <tr>
-                    <td>@donor.Id</td>
-                    <td>@donor.FirstName, @donor.LastName</td>
-                    <td>@donor.Location</td>
-                    <td>@donor.Email</td>
-                    <td>@donor.ContactNum</td>
-                    <td>@donor.BloodGroup</td>
-                </tr>
-            }
-  
-    </table>
-    }
-    else if(ViewBag.donors != null && ViewBag.donors.Count == 0)
-    {
-        <h2>No results found.</h2>
-    }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

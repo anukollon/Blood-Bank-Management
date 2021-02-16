@@ -1,68 +1,132 @@
 ﻿@model BloodBankManagement.ViewModel.AddDonorViewModel;
-@if (User.Identity.IsAuthenticated)
-{
-    <h3>Add Donor</h3>  
-}
-else
-{
-    <h3>Please update the following details to donate blood:</h3>
-}
-<hr />
-<form asp-controller="StaffLogin" asp-action="AddDonor" method="post">
-    <div class="form-group">
-        <label asp-for="FirstName">First Name</label>
-        <input asp-for="FirstName" />
-        <span asp-validation-for="FirstName"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-controller="StaffLogin" asp-action="AddDonor" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
 
-        <label asp-for="LastName">Last Name</label>
-        <input asp-for="LastName" />
-        <span asp-validation-for="LastName"></span>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <h4>Add Donor</h4>
+                                    }
+                                    else
+                                    {
+                                        <h4>Please update the following details to donate blood</h4>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <hr />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" required>
+                                        <label asp-for="FirstName" class="font-weight-bold">First Name</label>
+                                        <input asp-for="FirstName" placeholder="First Name" class="form-control" value="@Model.FirstName" />
+                                        <span asp-validation-for="FirstName"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group required">
+                                        <label asp-for="LastName" class="font-weight-bold">Last Name</label>
+                                        <input asp-for="LastName" placeholder="Last Name" class="form-control" />
+                                        <span asp-validation-for="LastName"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group required">
+                                        <label asp-for="DateOfBirth" class="font-weight-bold"></label>
+                                        <input asp-for="DateOfBirth" class="form-control" />
+                                        <span asp-validation-for="DateOfBirth"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group required">
+                                        <label asp-for="BloodGroup" class="font-weight-bold">Blood Group</label>
+                                        <select asp-for="BloodGroup" asp-items="Model.BloodGroups" class="form-control"></select>
+                                        <span asp-validation-for="BloodGroup"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group required">
+                                        <label asp-for="Email" class="font-weight-bold"></label>
+                                        <input asp-for="Email" class="form-control" placeholder="Email address" />
+                                        <span asp-validation-for="Email"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group required">
+                                        <label asp-for="ContactNum" class="font-weight-bold"></label>
+                                        <input asp-for="ContactNum" class="form-control" placeholder="Phone Number" />
+                                        <span asp-validation-for="ContactNum"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group required">
+                                        <label asp-for="Line1" class="font-weight-bold">Address Line 1</label>
+                                        <input asp-for="Line1" class="form-control" />
+                                        <span asp-validation-for="Line1"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="Line2" class="font-weight-bold">Address Line 2</label>
+                                        <input asp-for="Line2" class="form-control" />
+                                        <span asp-validation-for="Line2"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group required">
+                                        <label asp-for="City" class="font-weight-bold"></label>
+                                        <input asp-for="City" class="form-control" placeholder="City" />
+                                        <span asp-validation-for="City"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group required">
+                                        <label asp-for="State" class="font-weight-bold"></label>
+                                        <select asp-for="State" asp-items="Model.States" class="form-control"></select>
+                                        <span asp-validation-for="State"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group required">
+                                        <label asp-for="Zip" class="font-weight-bold"></label>
+                                        <input asp-for="Zip" class="form-control" placeholder="ZIP Code" />
+                                        <span asp-validation-for="Zip"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-12 mx-auto">
+                                        <div class="form-group">
+                                            <input type="submit" value="Submit" class="btn-primary btn-block btn-lg" />
+                                        </div>
+                                    </div>
+                            </div>                        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="DateOfBirth"></label>
-        <input asp-for="DateOfBirth" />
-        <span asp-validation-for="DateOfBirth"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Line1">Address Line 1</label>
-        <input asp-for="Line1" />
-        <span asp-validation-for="Line1"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Line2">Address Line 2</label>
-        <input asp-for="Line2" />
-        <span asp-validation-for="Line2"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="City"></label>
-        <input asp-for="City" />
-        <span asp-validation-for="City"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="State"></label>
-        <input asp-for="State" />
-        <span asp-validation-for="State"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Zip"></label>
-        <input asp-for="Zip" />
-        <span asp-validation-for="Zip"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email">Contact Email</label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ContactNum">Contact Number</label>
-        <input asp-for="ContactNum" />
-        <span asp-validation-for="ContactNum"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="BloodGroup">Blood Group</label>
-        <select asp-for="BloodGroup" asp-items="Model.BloodGroups"></select>
-        <span asp-validation-for="BloodGroup"></span>
-    </div>
-    <hr />
-    <input type="submit" value="Update" />
-</form>

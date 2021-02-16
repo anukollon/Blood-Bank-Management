@@ -22,6 +22,7 @@ namespace BloodBankManagement.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.checkedValue = "BloodGroup";
             return View();
         }
         public IActionResult Results(string searchType, string searchTerm)
@@ -31,7 +32,6 @@ namespace BloodBankManagement.Controllers
 
             if (string.IsNullOrEmpty(searchTerm))
             {
-                Console.WriteLine("Search Term is Empty");
                 donors = context.Donors.Include(a => a.Address).ToList();
                    
                 foreach (var donor in donors)
@@ -42,11 +42,8 @@ namespace BloodBankManagement.Controllers
             }
             else
             {
-                Console.WriteLine("Search Term is not Empty");
-                Console.WriteLine("Search Term BloodGroup: " + searchType + " searchTerm:" + searchTerm);
                 if (searchType == "BloodGroup")
                 {
-
                     donors = context.Donors
                         .Where(d => d.BloodGroup == searchTerm.ToUpper()).Include(a => a.Address)
                         .ToList();
@@ -59,15 +56,12 @@ namespace BloodBankManagement.Controllers
 
                 }
                 if (searchType == "Location")
-                {
-                   
+                {                  
                     donors = context.Donors
                         .Include(a => a.Address)
                         .Where(a => a.Address.City.ToLower() == searchTerm.ToLower()
                         || a.Address.State.ToLower() == searchTerm.ToLower())
                         .ToList();
-
-
                     foreach (Donor donor in donors)
                     {
                         SearchDonorViewModel result = new SearchDonorViewModel(donor);

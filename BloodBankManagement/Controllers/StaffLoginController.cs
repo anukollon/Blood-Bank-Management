@@ -28,7 +28,8 @@ namespace BloodBankManagement.Controllers
         public IActionResult AddDonor()
         {
            AddDonorViewModel addDonorViewModel = new AddDonorViewModel();
-           return View(addDonorViewModel);
+            ViewBag.fromPage = "Add";
+            return View(addDonorViewModel);
         }
 
         [HttpPost]
@@ -60,8 +61,7 @@ namespace BloodBankManagement.Controllers
                 }
                 else
                 {
-                    TempData["msg"] = "Thanks for volunteering! Your Details are updated in the Blood Bank Database. " +
-                        "The nearest center staff will call you to schedule a date for blood donation.";
+                    TempData["msg"] = "Thank you for volunteering!";
                     return Redirect("/Home");
                 }
                     

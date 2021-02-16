@@ -1,29 +1,43 @@
 ﻿@*@model List<BloodBankManagement.Models.HomeController>*@
+<div class="container">
+    <div class="col-md-10 mx-auto">
+        <div class="card">
+            <div class="card-body">
 
-<h3>Blood Bank Management Software</h3>
-<hr />
-<p>
-    @if (TempData["msg"] != null)
-    {
-    <h4>@TempData["msg"].ToString()</h4>
-    }
-</p>
-<p>
-    <a asp-controller="StaffLogin" asp-action="AddDonor">Add Donor</a>
-</p>
-
-<p>
-    <a asp-controller="StaffLogin" asp-action="DeleteDonor">Delete Donor</a>
-</p>
-
-<p>
-    <a asp-controller="Search">Search Donor</a>
-</p>
-
-<p>
-    <a asp-controller="ListDonor">Donor List</a>
-</p>
-
-<p>
-    <a asp-controller="StaffLogin" asp-action="ManageStock">Manage Stock</a>
-</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (TempData["msg"] != null)
+                        {
+                            <h4>@TempData["msg"].ToString()</h4>
+                        }
+                    </div>
+                </div>
+                <div class="pb-3 row">
+                    <div class="h4 col-md-12 text-center">
+                        <a asp-controller="StaffLogin" asp-action="AddDonor" class="page-link">Add Donor</a>
+                    </div>
+                </div>
+                <div class="pb-3 row">
+                    <div class="h4 col-md-12 text-center">
+                        <a asp-controller="StaffLogin" asp-action="DeleteDonor" class="page-link">Delete Donor</a>
+                    </div>
+                </div>
+                <div class="pb-3 row">
+                    <div class="h4 col-md-12 text-center">
+                        <a asp-controller="Search" class="page-link">Search Donor</a>
+                    </div>
+                </div>
+                <div class="pb-3 row">
+                    <div class="h4 col-md-12 text-center">
+                        <a asp-controller="ListDonor" class="page-link">Donor List</a>
+                    </div>
+                </div>
+                <div class="pb-3 row">
+                    <div class="h4 col-md-12 text-center">
+                        <a asp-controller="StaffLogin" asp-action="ManageStock" class="page-link">Manage Stock</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,41 +3,72 @@
 *@
 @{
 }
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Edit Donor</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hr />
+                        </div>
+                    </div>
+                    @if (ViewBag.donors.Count == 0)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>No Donor data available!</h4>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
 
-<h3>Delete Donor</h3>
-<hr />
-@if (ViewBag.donors.Count == 0)
-{
-    <p>No Donor data available!</p>
-}
-else
-{
-    <form method="post">
-        <table class="donor-listing">
-            <tr>
-                <th>Donor ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Location</th>
-                <th>Blood Group</th>
-                <th>Select the Donor</th>
-            </tr>
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-12 align-content-center">
+                                    <table class="donor-listing">
+                                        <tr>
+                                            <th>Donor ID</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Location</th>
+                                            <th>Blood Group</th>
+                                            <th>Select the Donor</th>
+                                        </tr>
 
-            @foreach (var donor in ViewBag.donors)
-            {
-                <tr>
-                    <td>@donor.Id</td>
-                    <td>@donor.FirstName</td>
-                    <td>@donor.LastName</td>
-                    <td>@donor.Address.City, @donor.Address.State</td>
-                    <td>@donor.BloodGroup</td>
-                    <td><input type="checkbox" name="donorIds" value="@donor.Id" class="form-control"></td>
-                </tr>
-            }
-        </table>
-        <hr />
-        <p>
-            <input type="submit" value="Delete Selected Donors" class="btn btn-danger">
-        </p>
-    </form>
-}
+                                        @foreach (var donor in ViewBag.donors)
+                                        {
+                                            <tr>
+                                                <td>@donor.Id</td>
+                                                <td>@donor.FirstName</td>
+                                                <td>@donor.LastName</td>
+                                                <td>@donor.Address.City, @donor.Address.State</td>
+                                                <td>@donor.BloodGroup</td>
+                                                <td><input type="checkbox" name="donorIds" value="@donor.Id" class="form-control"/></td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">                              
+                                        <input type="submit" value="Delete Selected Donors" class="btn-danger btn-lg display-4"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

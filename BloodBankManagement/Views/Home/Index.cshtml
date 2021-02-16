@@ -2,21 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <p>Welcome To</p>
-    <h1 class="display-4">Blood Bank Management System</h1>
-    <p>A one stop website to manage donors and stocks in a Blood Bank.</p>
+<div class="p-5 text-center">
+    <h2>Welcome to</h2>
+    <h3>A one stop website to manage donors and stocks in a Blood Bank.</h3>
 </div>
-<hr />
-<p class="alert-heading">
+<div class="text-danger text-center">
     @if (TempData["msg"] != null)
     {
         <h4>@TempData["msg"].ToString()</h4>
     }
-</p>
+</div>
 
-<hr />
-<div class="text-center">
+<div class="p-5 text-center">
     <h2><a asp-controller="StaffLogin" asp-action="AddDonor">Click Here to Donate Blood</a></h2>
+    <h5>You can submit your details now and get a call from the Blood Bank Center to schedule a suitable time for blood donation.</h5>
  </div>
-<hr />

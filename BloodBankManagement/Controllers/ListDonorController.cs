@@ -31,6 +31,8 @@ namespace BloodBankManagement.Controllers
             Address donorAddress = context.Address.Find(editDonor.AddressId);
             editDonor.Address = donorAddress;
             AddDonorViewModel donorViewModel = new AddDonorViewModel(editDonor);
+            Console.WriteLine("get id: " + donorViewModel.Id);
+            Console.WriteLine("editDonor: " + editDonor.Id);
             return View(donorViewModel);
         }
         [HttpPost]
@@ -38,7 +40,7 @@ namespace BloodBankManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                Console.WriteLine("id: " + donorViewModel.Id);
                 Donor donorToEdit = context.Donors.Find(donorViewModel.Id);
                 Address addressToEdit = context.Address.Find(donorToEdit.AddressId);
 
@@ -58,7 +60,7 @@ namespace BloodBankManagement.Controllers
                 context.Donors.Update(donorToEdit);
                 context.Address.Update(addressToEdit);
                 context.SaveChanges();
-                TempData["msg"] = "Donor with Id: "+donorToEdit.Id+" updated successfully.";
+                TempData["msg"] = "Donor Id: "+donorToEdit.Id+" updated successfully.";
                 return Redirect("/StaffLogin");
             }
 
