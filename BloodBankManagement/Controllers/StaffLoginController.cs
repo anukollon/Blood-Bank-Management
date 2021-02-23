@@ -13,7 +13,7 @@ namespace BloodBankManagement.Controllers
 {
     public class StaffLoginController : Controller
     {
-        private BloodBankDbContext context;
+        private readonly BloodBankDbContext context;
 
         public StaffLoginController(BloodBankDbContext dbContext)
         {

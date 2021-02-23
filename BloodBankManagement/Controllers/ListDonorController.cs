@@ -8,13 +8,14 @@ using BloodBankManagement.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Nancy.Json;
 
 namespace BloodBankManagement.Controllers
 {
     [Authorize]
     public class ListDonorController : Controller
     {
-        private BloodBankDbContext context;
+        private readonly BloodBankDbContext context;
 
         public ListDonorController(BloodBankDbContext dbContext)
         {
@@ -22,7 +23,18 @@ namespace BloodBankManagement.Controllers
         }
         public IActionResult Index()
         {
-            ViewBag.donors = context.Donors.Include(d => d.Address).ToList();
+            List<Donor> donors = context.Donors.Include(d => d.Address).ToList();
+            ViewBag.donors = donors;
+
+            List<string> locations = new List<string>();
+            string[] arrLocations;
+             foreach(Donor d in donors)
+            {
+                locations.Add(d.Address.City + "," + d.Address.State);
+            }
+            arrLocations= locations.ToArray();
+            Console.WriteLine(locations.Count);
+            ViewBag.locations = locations;
             return View();
         }
         public IActionResult EditDonor(string value)

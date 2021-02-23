@@ -10,7 +10,7 @@ namespace BloodBankManagement.Controllers
 {
     public class ManageStockController:Controller
     {
-        private BloodBankDbContext context;
+        private readonly BloodBankDbContext context;
 
         public ManageStockController(BloodBankDbContext dbContext)
         {

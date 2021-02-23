@@ -14,7 +14,7 @@ namespace BloodBankManagement.Controllers
     [Authorize]
     public class SearchController : Controller
     {
-        private BloodBankDbContext context;
+        private readonly BloodBankDbContext context;
 
         public SearchController(BloodBankDbContext dbContext)
         {

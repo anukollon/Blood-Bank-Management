@@ -3,6 +3,12 @@
 *@
 @{
 }
+<style>
+    #map {
+        height: 400px;
+        width: 100%
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-md-10 mx-auto">
@@ -23,41 +29,104 @@
                     }
                     else
                     {
-                <form method="post">
-                    <div class="row">
-                        <div class="col-md-12 align-content-center">
-                            <table class="donor-listing">
-                                <tr>
-                                    <th>Donor ID</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Location</th>
-                                    <th>Email</th>
-                                    <th>Contact Number</th>
-                                    <th>Blood Group</th>
-                                    <th></th>
-                                </tr>
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-12 align-content-center">
+                                    <table class="donor-listing">
+                                        <tr>
+                                            <th>Donor ID</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Location</th>
+                                            <th>Email</th>
+                                            <th>Contact Number</th>
+                                            <th>Blood Group</th>
+                                            <th></th>
+                                        </tr>
 
-                                @foreach (var donor in ViewBag.donors)
-                                {
-                                    <tr>
-                                        <td>@donor.Id</td>
-                                        <td>@donor.FirstName</td>
-                                        <td>@donor.LastName</td>
-                                        <td>@donor.Address.City, @donor.Address.State</td>
-                                        <td>@donor.Email</td>
-                                        <td>@donor.ContactNum</td>
-                                        <td>@donor.BloodGroup</td>
-                                        <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">Edit</a></td>
-                                    </tr>
-                                }
-                            </table>
+                                        @foreach (var donor in ViewBag.donors)
+                                        {
+                                            <tr>
+                                                <td>@donor.Id</td>
+                                                <td>@donor.FirstName</td>
+                                                <td>@donor.LastName</td>
+                                                <td>@donor.Address.City, @donor.Address.State</td>
+                                                <td>@donor.Email</td>
+                                                <td>@donor.ContactNum</td>
+                                                <td>@donor.BloodGroup</td>
+                                                <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">Edit</a></td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
                             </div>
-                        </div>
-                </form>
+                        </form>
                     }
+                    <div><br /></div>
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    var map;
+    var markers = [];
+    var locationCount = @ViewBag.locations.Count;
+    var counter = 0;
+
+    function initialize() {
+        latlng = { lat: 37.0902, lng: -95.7129 }; //Latitude and Longitude of the USA
+        var options = {
+            center: latlng,
+            zoom: 4.5
+        }
+        map = new google.maps.Map(document.getElementById("map"), options); //Load the map 
+
+        //Serialize the donor locations from ViewBag to JS variable
+        var loc = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.locations));
+        
+        for (var i = 0; i < locationCount; i++) {
+            var location = loc[i];
+            geoCode(location);
+        }
+    }
+
+    //Use the GeoCode Google API to get the latitude and longitude of a specific city
+    async function geoCode(strLocation) {
+        var latlng;
+        await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+            params: {
+                address: strLocation,
+                key: 'AIzaSyCsblRNfAsjZaNgyd76oZPjFNA3GPo5Gw0'
+            }
+        })
+            .then(function (response) {
+                var lat = response.data.results[0].geometry.location.lat;
+                var lng = response.data.results[0].geometry.location.lng;
+                latlng = { lat: lat, lng: lng };
+
+                //Add Marker
+                var marker = new google.maps.Marker({
+                    position: latlng,                    
+                });
+
+                markers.push(marker); //push the marker to a array of markers
+                counter++;
+
+                //once you reach the end of the location iteration, create a new MarkerClusterer
+                if (counter == locationCount) {
+                    var markerCluster = new MarkerClusterer(map, markers,
+                        {
+                            imagePath: 'images/m',
+                            gridSize: 20 });
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+    google.maps.event.addDomListener(window, "load", initialize);
+</script>
+
+
