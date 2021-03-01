@@ -47,6 +47,7 @@ namespace BloodBankManagement.ViewModel
 
         [StringLength(10,ErrorMessage ="Phone number must be 10 digits.")]
         [DisplayName("Phone")]
+        [Required(ErrorMessage = "Please enter your Phone Number.")]
         public string ContactNum { get; set; }
         public string BloodGroup { get; set; }
 

@@ -1,3 +1,10 @@
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.AssemblyInfoInputs.cache
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.AssemblyInfo.cs
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.csproj.CoreCompileInputs.cache
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.RazorAssemblyInfo.cache
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.RazorAssemblyInfo.cs
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\libman.json
@@ -11,6 +18,7 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\BloodBankManagement.pdb
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\BloodBankManagement.Views.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\BloodBankManagement.Views.pdb
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\dotenv.net.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -26,7 +34,6 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
@@ -39,7 +46,6 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
@@ -47,7 +53,6 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -64,7 +69,6 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\MySqlConnector.dll
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Nancy.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
@@ -140,14 +144,6 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.csprojAssemblyReference.cache
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.AssemblyInfoInputs.cache
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.AssemblyInfo.cs
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.csproj.CoreCompileInputs.cache
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.RazorAssemblyInfo.cache
-C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.RazorAssemblyInfo.cs
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.TagHelpers.input.cache
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.TagHelpers.output.cache
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.RazorCoreGenerate.cache
@@ -185,3 +181,4 @@ C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManageme
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.dll
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.pdb
 C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.genruntimeconfig.cache
+C:\Users\BB\Desktop\New folder\LaunchCode\Liftoff\Project repo\BloodBankManagement\obj\Debug\netcoreapp3.1\BloodBankManagement.csprojAssemblyReference.cache

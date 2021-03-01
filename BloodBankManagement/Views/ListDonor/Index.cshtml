@@ -1,9 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<style>
+﻿<style>
     #map {
         height: 400px;
         width: 100%
@@ -57,7 +52,7 @@
                                                 <td><a asp-controller="ListDonor" asp-action="EditDonor" asp-route-value="@donor.Id" Text="Edit Donor" CssClass="ButtonClass">Edit</a></td>
                                             </tr>
                                         }
-                                    </table>
+                                    </table>                                   
                                 </div>
                             </div>
                         </form>
@@ -70,22 +65,25 @@
     </div>
 </div>
 <script>
+ @*   var mapKey = @ViewBag.mapKey;
+    var geocodeKey = @ViewBag.geocodeKey;*@
     var map;
     var markers = [];
     var locationCount = @ViewBag.locations.Count;
     var counter = 0;
 
     function initialize() {
+
         latlng = { lat: 37.0902, lng: -95.7129 }; //Latitude and Longitude of the USA
         var options = {
             center: latlng,
-            zoom: 4.5
+            zoom: 4
         }
-        map = new google.maps.Map(document.getElementById("map"), options); //Load the map 
+        map = new google.maps.Map(document.getElementById("map"), options); //Load the map
 
         //Serialize the donor locations from ViewBag to JS variable
         var loc = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.locations));
-        
+
         for (var i = 0; i < locationCount; i++) {
             var location = loc[i];
             geoCode(location);
@@ -102,25 +100,28 @@
             }
         })
             .then(function (response) {
-                var lat = response.data.results[0].geometry.location.lat;
-                var lng = response.data.results[0].geometry.location.lng;
-                latlng = { lat: lat, lng: lng };
+                if (response.data.results.length > 0) {
 
-                //Add Marker
-                var marker = new google.maps.Marker({
-                    position: latlng,                    
-                });
+                    var lat = response.data.results[0].geometry.location.lat;
+                    var lng = response.data.results[0].geometry.location.lng;
+                    latlng = { lat: lat, lng: lng };
+                    //Add Marker
+                    var marker = new google.maps.Marker({
+                        position: latlng,
+                        label: strLocation
+                    });
 
-                markers.push(marker); //push the marker to a array of markers
+                    markers.push(marker); //push the marker to a array of markers
                 counter++;
-
                 //once you reach the end of the location iteration, create a new MarkerClusterer
                 if (counter == locationCount) {
-                    var markerCluster = new MarkerClusterer(map, markers,
-                        {
-                            imagePath: 'images/m',
-                            gridSize: 20 });
-                }
+                        var markerCluster = new MarkerClusterer(map, markers,
+                            {
+                                imagePath: 'images/m',
+                                gridSize: 20
+                            });
+                    }
+               }
             })
             .catch(function (error) {
                 console.log(error);

@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using BloodBankManagement.Data;
 using BloodBankManagement.Models;
 using BloodBankManagement.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Nancy.Json;
 
 namespace BloodBankManagement.Controllers
 {
@@ -25,17 +23,14 @@ namespace BloodBankManagement.Controllers
         {
             List<Donor> donors = context.Donors.Include(d => d.Address).ToList();
             ViewBag.donors = donors;
-
+            //Add the locations into ViewBag to be used as Markers in google map.
             List<string> locations = new List<string>();
-            string[] arrLocations;
-             foreach(Donor d in donors)
+            foreach(Donor d in donors)
             {
                 locations.Add(d.Address.City + "," + d.Address.State);
             }
-            arrLocations= locations.ToArray();
-            Console.WriteLine(locations.Count);
             ViewBag.locations = locations;
-            return View();
+            return View(donors);
         }
         public IActionResult EditDonor(string value)
         {
