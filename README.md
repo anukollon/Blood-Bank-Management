@@ -8,3 +8,6 @@ Features:
 3. Search Feature: Users will be able to search for a particular blood group and blood type.
 4. Display a list of all blood types and the donors available. There is an option to print this list.
 5. An admin/individual at the blood bank should be able to view and edit the stock of blood left at the blood bank. He can request a donor to donate blood if the storage level goes below certain level. This request can be made by sending an email to the donor.
+
+
+https://www.youtube.com/watch?v=mbjL8MxWGec
